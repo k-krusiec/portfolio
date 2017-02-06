@@ -10,13 +10,6 @@ body {
   font-family: 'open_sansregular', sans-serif;
 }
 
-header {
-  height: 350px;
-  background: url(../images/hex-bg.png) repeat-x center center;
-  background-size: auto;
-
-}
-
 .main_width {
   width: 100%;
   max-width: 1170px;
@@ -24,13 +17,13 @@ header {
 }
 
 .main-nav {
-  background: $main-nav-bg;
-  color: $main-nav-color;
+  background: $dark-gray;
+  color: $white;
   font-size: 0.9375rem;
   text-align: center;
-  -webkit-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.3);
-  -moz-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.3);
-  box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 3px 10px 5px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 3px 10px 5px rgba(0,0,0,0.4);
+  box-shadow: 0px 3px 10px 5px rgba(0,0,0,0.4);
 }
 .menu {
   display: flex;
@@ -47,7 +40,7 @@ header {
   }
 }
 
-.main-nav-logo {
+.menu-logo {
   display: none;
   width: 20%;
   position: relative;
@@ -56,6 +49,60 @@ header {
 
 }
 
-.hero {
+header {
+  background: url(../images/hex-bg.png) repeat-x center center;
+  background-size: auto;
+  // -webkit-box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.3);
+  // -moz-box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.3);
+  // box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.3);
+}
+
+.mega-header {
+  display: flex;
+  justify-content: center;
+
+}
+
+.dev-container {
+  width: 70%;
+  padding: 55px;
   text-align: center;
+  color: $dark-gray;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+30,0+100 */
+  background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 45%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 45%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 45%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.dev-name {
+  margin-top: 35px;
+  font-family: 'open_sansbold', sans-serif;
+  font-size: 2.3125rem;
+}
+
+.dev-proffesion {
+  margin-top: 15px;
+  font-family: 'open_sanslight', sans-serif;
+  font-size: 2rem;
+}
+
+.section-title {
+  font-family: 'open_sanslight', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.technologies {
+  background: $super-dark-gray;
+  color: $white;
+  -webkit-box-shadow: 0px -3px 10px 5px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px -3px 10px 5px rgba(0,0,0,0.4);
+  box-shadow: 0px -3px 10px 5px rgba(0,0,0,0.4);
+}
+
+.tech-container {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
 }
