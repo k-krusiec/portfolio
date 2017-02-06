@@ -2,13 +2,60 @@
   box-sizing: border-box;
 }
 
-body {
+html {
   font-size: 16px;
+}
+
+body {
   font-family: 'open_sansregular', sans-serif;
+}
+
+header {
+  height: 350px;
+  background: url(../images/hex-bg.png) repeat-x center center;
+  background-size: auto;
+
 }
 
 .main_width {
   width: 100%;
   max-width: 1170px;
   margin: 0 auto;
+}
+
+.main-nav {
+  background: $main-nav-bg;
+  color: $main-nav-color;
+  font-size: 0.9375rem;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.3);
+}
+.menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 53px;
+}
+
+.menu-item {
+  min-width: 20%;
+  padding: 19px 20px;
+  &:hover {
+    background: red;
+  }
+}
+
+.main-nav-logo {
+  display: none;
+  width: 20%;
+  position: relative;
+  top: 5px;
+  padding: 0;
+
+}
+
+.hero {
+  text-align: center;
 }
