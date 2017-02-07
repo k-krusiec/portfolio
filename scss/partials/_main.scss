@@ -52,9 +52,6 @@ body {
 header {
   background: url(../images/hex-bg.png) repeat-x center center;
   background-size: auto;
-  // -webkit-box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.3);
-  // -moz-box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.3);
-  // box-shadow: inset 0px 0px 20px 5px rgba(0,0,0,0.3);
 }
 
 .mega-header {
@@ -88,12 +85,14 @@ header {
 }
 
 .section-title {
+  padding: 50px 20px 0;
   font-family: 'open_sanslight', sans-serif;
   font-size: 1.5rem;
   text-transform: uppercase;
 }
 
 .technologies {
+  text-align: center;
   background: $super-dark-gray;
   color: $white;
   -webkit-box-shadow: 0px -3px 10px 5px rgba(0,0,0,0.4);
@@ -102,7 +101,67 @@ header {
 }
 
 .tech-container {
+  padding: 50px 0;
+}
+
+.jeden, .dwa {
   display: flex;
   justify-content: center;
-  padding: 50px 0;
+  flex-flow: row wrap;
+}
+
+.big {
+  div {
+    div {
+      border: 1px solid green;
+    }
+  }
+}
+
+.small {
+  display: none;
+  div {
+    div {
+      border: 1px solid red;
+    }
+  }
+}
+
+.fakebox {
+  width: 143px;
+  height: 143px;
+}
+
+@media #{$tablet} {
+  .big {
+    display: none;
+  }
+
+  .small {
+    display: block;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+
+  .fakebox {
+    width: 143px;
+    height: 200px;
+  }
+}
+
+@media #{$phone} {
+  .big {
+    display: none;
+  }
+
+  .small {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .fakebox {
+    width: 90px;
+    height: 150px;
+  }
 }
