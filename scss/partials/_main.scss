@@ -43,7 +43,7 @@ body {
   min-width: 20%;
   padding: 19px 20px;
   &:hover {
-    background: red;
+    background: $violet;
   }
 }
 
@@ -96,9 +96,9 @@ header {
 }
 
 .logo-shape {
-  fill: #3e007a;
+  fill: $violet;
   fill-opacity: 1;
-  stroke: #3e007a;
+  stroke: $violet;
   stroke-linejoin: round;
   stroke-width: 2px;
   fill-rule: evenodd;
@@ -276,5 +276,30 @@ header {
       stroke-width: 2px;
       fill-rule: evenodd;
     }
+  }
+}
+
+.contact {
+  background: $violet;
+  color: $white;
+  text-align: center;
+}
+
+.cont-container {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  padding: 50px 0;
+}
+
+.left-cont {
+  text-align: right;
+}
+
+.right-cont {
+  text-align: left;
+  .cont-form {
+    display: flex;
+    flex-flow: column;
   }
 }
