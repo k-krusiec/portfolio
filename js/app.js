@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   changeMenuOnScroll();
-
+//temporary scrollToTop
   function scrollToTop(scrollDuration) {
 
     const scrollHeight = window.scrollY,
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
   menuLogo.addEventListener('click', function() {
     scrollToTop(500);
   })
-
+  //temporary scrollToTop
 
 
 })
