@@ -279,10 +279,56 @@ header {
   }
 }
 
+.projects {
+  color: $dark-gray;
+  text-align: center;
+}
+
+.proj-container {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  padding: 50px 0;
+}
+
+.proj-first-row,
+.proj-second-row {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  padding: 20px;
+}
+
+.proj-second-row {
+  margin-top: -60px;
+}
+
+.fakeboxproj {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  > svg {
+    width: 80%;
+  }
+
+  .cls-1 {
+    fill: $dark-gray;
+    fill-opacity: 1;
+    stroke: $dark-gray;
+    stroke-linejoin: round;
+    stroke-width: 2px;
+    fill-rule: evenodd;
+  }
+}
+
 .contact {
   background: $violet;
   color: $white;
   text-align: center;
+  -webkit-box-shadow: 0px -3px 10px 5px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px -3px 10px 5px rgba(0,0,0,0.4);
+  box-shadow: 0px -3px 10px 5px rgba(0,0,0,0.4);
 }
 
 .cont-container {
