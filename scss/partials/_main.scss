@@ -337,17 +337,24 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.4s cubic-bezier(0.21, 0.61, 0.35, 1) 0s;
   > svg {
     width: 80%;
   }
 
   .cls-1 {
+    position: relative;
     fill: $dark-gray;
-    fill-opacity: 1;
+    fill-opacity: 0.2;
     stroke: $dark-gray;
     stroke-linejoin: round;
-    stroke-width: 2px;
+    stroke-width: 1px;
     fill-rule: evenodd;
+
+  }
+
+  &:hover {
+    transform: scale(1.2);
   }
 }
 
