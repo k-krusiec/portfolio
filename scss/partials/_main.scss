@@ -48,11 +48,30 @@ body {
 .menu-item {
   min-width: 20%;
   padding: 19px 20px;
-  transition: all 0.3s ease-in-out;
-  cursor: default;
+  position: relative;
+  cursor: pointer;
+  display: block;
+	transition: all 0.4s cubic-bezier(0.21, 0.61, 0.35, 1) 0s;
   &:hover {
-    background-color: $white;
     color: $dark-gray;
+    &:before {
+      top: 0%;
+    	bottom: auto;
+    	height: 100%;
+    }
+  }
+
+  &:before {
+  	display: block;
+  	position: absolute;
+  	left: 0px;
+  	bottom: 0px;
+  	height: 0px;
+  	width: 100%;
+  	z-index: -1;
+  	content: '';
+  	background: $white;
+  	transition: all 0.4s cubic-bezier(0.21, 0.61, 0.35, 1) 0s;
   }
 }
 
@@ -62,6 +81,7 @@ body {
   top: 5px;
   padding: 0;
   cursor: default;
+  filter: drop-shadow(0px 10px 5px rgba(0,0,0,0.4));
 }
 
 header {
@@ -317,17 +337,24 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.4s cubic-bezier(0.21, 0.61, 0.35, 1) 0s;
   > svg {
     width: 80%;
   }
 
   .cls-1 {
+    position: relative;
     fill: $dark-gray;
-    fill-opacity: 1;
+    fill-opacity: 0.2;
     stroke: $dark-gray;
     stroke-linejoin: round;
-    stroke-width: 2px;
+    stroke-width: 1px;
     fill-rule: evenodd;
+
+  }
+
+  &:hover {
+    transform: scale(1.2);
   }
 }
 
@@ -357,4 +384,127 @@ header {
     display: flex;
     flex-flow: column;
   }
+}
+
+
+.klik {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  display: inline-block;
+  overflow: hidden;
+
+}
+
+.zz {
+  width: 128px;
+  height: 74px;
+  background: red;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  z-index: 0;
+  margin: 37px 0;
+  transition: 2s;
+
+}
+
+.zz:hover {
+  transform: rotateZ(360deg);
+}
+
+
+
+.zz:before {
+  width: 128px;
+  height: 74px;
+  background: red;
+  position: absolute;
+  text-align: center;
+  z-index: -1;
+  content: '';
+  transform: rotateZ(60deg);
+  top: 0;
+  left: -1px;
+}
+
+.zz:after {
+  width: 128px;
+  height: 74px;
+  background: red;
+  position: absolute;
+  text-align: center;
+  z-index: -1;
+  content: '';
+  transform: rotateZ(-60deg);
+  top: 0;
+  left: -1px;
+}
+
+.zz-text {
+  font-size: 74px;
+  display: inline-block;
+  font-family: 'open_sansbold', sans-serif;
+}
+
+.ww {
+  width: 128px;
+  height: 74px;
+  background: red;
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  margin: 37px 0;
+  transition: 2s;
+  &:before {
+    width: 128px;
+    height: 74px;
+    background: red;
+    position: absolute;
+    text-align: center;
+    z-index: -1;
+    content: '';
+    transform: rotateZ(60deg);
+    top: 0;
+    left: -1px;
+  }
+  &:after {
+    width: 128px;
+    height: 74px;
+    background: red;
+    position: absolute;
+    text-align: center;
+    z-index: -1;
+    content: '';
+    transform: rotateZ(-60deg);
+    top: 0;
+    left: -1px;
+  }
+}
+
+.sssw{
+    overflow:hidden;
+    height: 500px;
+    width: 500px;
+    text-align: center;
+}
+.shaped{
+    height:500px;
+    width:300px;
+    background: transparent;
+    background-size:cover;
+
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
+}
+
+.tenpodmasko {
+  width:300px;
+  height: 300px;
+  background: black;
+  transform: translate(100%, 100%);
+  transition: 2s;
+}
+
+.sssw:hover .tenpodmasko{
+  transform: translate(0, 0);
 }
