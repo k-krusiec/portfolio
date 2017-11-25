@@ -1,6 +1,8 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -9,50 +11,75 @@ module.exports = {
   devServer: {
     contentBase: './dist'
   },
-  plugins: [
-    new CleanWebpackPlugin(['./dist']),
-    new HtmlWebpackPlugin({
-      title: 'Karol Krusiec - Portfolio',
-      template: './src/views/index.html',
-      chunks: 'app'
-    })
-  ],
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, './dist')
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
-    rules: [{
-      test: /\.scss$/,
-      use: [{
-        loader: "style-loader"
-      }, {
-        loader: "css-loader"
-      }, {
-        loader: "sass-loader"
-      }]
-    }, {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader'
-    }, {
-      test: /\.(png|svg|jpg|gif)$/,
-      use: [{
-        loader: 'file-loader',
-        options: {
-          outputPath: './images/',
-          publicPath: '../images'
-        }
-      }]
-    }, {
-      test: /\.(woff|woff2|eot|ttf|otf)$/,
-      use: [{
-        loader: 'file-loader',
-        options: {
-          outputPath: './fonts/',
-          publicPath: '../fonts'
-        }
-      }]
-    }]
-  }
+    rules: [
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader']
+        })
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images/'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
+      }
+    ]
+  },
+  plugins: [
+    // new CleanWebpackPlugin(['dist/*.*']),
+    new CleanWebpackPlugin(['dist']),
+    new ExtractTextPlugin('css/style.css'),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'src/views/index.html',
+      chunks: ['app']
+    }),
+    new BrowserSyncPlugin(
+      {
+        host: 'localhost',
+        port: 3000,
+        proxy: 'http://localhost:8080/'
+      },
+      {
+        reload: false
+      }
+    )
+  ]
 };
