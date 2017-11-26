@@ -63,7 +63,6 @@ module.exports = {
     ]
   },
   plugins: [
-    // new CleanWebpackPlugin(['dist/*.*']),
     new CleanWebpackPlugin(['dist']),
     new ExtractTextPlugin('css/style.css'),
     new HtmlWebpackPlugin({
